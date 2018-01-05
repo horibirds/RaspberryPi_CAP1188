@@ -2,3 +2,6 @@
 CAP1188 module simple test
 
 multitap test
+
+## setup
+https://diyprojects.io/activate-i2c-bus-raspberry-pi-3-zero/#.Wk-PM1SFjOR
