@@ -1,7 +1,13 @@
 #!/paty/to/python
 # -*- coding: utf-8 -*-
+import os 
 import smbus
 import time
+import subprocess
+import pygame.mixer
+
+pygame.mixer.init()
+pygame.mixer.music.load("./sample.mp3")
 
 i2c = smbus.SMBus(1)
 address = 0x29
@@ -29,3 +35,5 @@ while(1):
             touch_list.append(i+1)
     print(touch_list)
     time.sleep(0.1)
+    if(8 in touch_list):
+        pygame.mixer.music.play(1)
