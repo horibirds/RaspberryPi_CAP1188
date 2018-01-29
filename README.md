@@ -19,7 +19,7 @@ vim /Volumes/boot/cmdline.txt
 echo "dtoverlay=dwc2" >> /Volumes/boot/config.txt
 SDカードを抜き、raspberry piに挿入。USBでPCとつなぐ(内側のUSBとつなぐ)
 mac側のインターネット共有ON
-ssh ssh pi@raspberrypi.local
+ssh pi@raspberrypi.local
 passはraspberry
 sudo raspi-config
   passwordを変更
