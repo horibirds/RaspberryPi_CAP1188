@@ -23,6 +23,7 @@ ssh pi@raspberrypi.local
 passはraspberry
 sudo raspi-config
   passwordを変更
+sudo iwlist wlan0 scan
 vim pass.txt
   wifiのパスワードを書く
 sudo sh -c 'wpa_passphrase "wifiのアクセスポイント名" < pass.txt >> /etc/wpa_supplicant/wpa_supplicant.conf'
