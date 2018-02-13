@@ -52,7 +52,16 @@ pi@raspberrypi:~ $ lsmod | grep i2c_
 - trust <BluetoothスピーカーのMACアドレス>
 - connect <BluetoothスピーカーのMACアドレス>
 - quit
-- pactl set-card-profile 1 a2dp
+- `pacmd list-cards` でbluetoothスピーカーが出るか確認
+- profileの欄を見る
+- offになっていたら `pacmd set-card-profile <bluetoothスピーカーのcard名> a2dp_sink` でprofileを変更
+  - profileが変更できないときは次のコマンドを入力して、bluetoothスピーカーをconnectしなおしてから対応すると良い
+  - ```sudo killall bluealsa
+  - pulseaudio --start```
+- pactl set-card-profile 1 a2dp（これいらないかも）
+- `pacmd list-sinks` でbluetoothスピーカーがsinkにいることを確認
+- デフォルトのsinkをbluetoothスピーカーにするために `pacmd set-default-sink <bluetoothスピーカーのsink名>` で設定
+- `paplay /usr/share/sounds/alsa/Front_Center.wav` で音が再生されたら設定完了
 - paplay <sinkの名前> /usr/share/sounds/alsa/Front_Center.wav
 - sinkの名前はpactl listで一覧表示可能
 
