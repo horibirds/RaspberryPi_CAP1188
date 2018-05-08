@@ -35,5 +35,6 @@ while(1):
             touch_list.append(i+1)
     print(touch_list)
     time.sleep(0.1)
-    if(8 in touch_list):
-        pygame.mixer.music.play(1)
+    if(6 in touch_list):
+        if(not pygame.mixer.music.get_busy()):
+            pygame.mixer.music.play(1)
