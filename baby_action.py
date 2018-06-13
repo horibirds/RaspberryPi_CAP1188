@@ -19,7 +19,7 @@ i2c.write_byte_data(address, 0x2A, 0x0C)
 i2c.write_byte_data(address, 0x72, 0xff)
 # sensitivity
 # i2c.write_byte_data(address, 0x1F, 0x3f)
-i2c.write_byte_data(address, 0x1F, 0x4f)
+i2c.write_byte_data(address, 0x1F, 0x6f)
 # (option) setting LED mode
 i2c.write_byte_data(address, 0x81, 0x00)
 i2c.write_byte_data(address, 0x82, 0x00)
@@ -35,6 +35,6 @@ while(1):
             touch_list.append(i+1)
     print(touch_list)
     time.sleep(0.1)
-    if(6 in touch_list):
+    if(1 in touch_list):
         if(not pygame.mixer.music.get_busy()):
             pygame.mixer.music.play(1)
